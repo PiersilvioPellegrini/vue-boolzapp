@@ -72,6 +72,35 @@
     color: #8EDAFC;;
 }
 
+.messageGreen{
+    padding: 20px 10px;
+    align-items: center;
+    justify-content: start;
+    display:flex;
+    margin: 20px;
+    width: 300px;
+    border-radius: 25px;
+    height: 40px;
+    background-color:rgb(101, 139, 101);
+    color:black;
+    
+}
+
+.messageWhite{
+    align-self: flex-end;
+    padding: 20px 10px;
+    align-items: center;
+    justify-content: start;
+    display:flex;
+    margin: 20px;
+    width: 300px;
+    border-radius: 25px;
+    height: 40px;
+    background-color:white;
+    color:black;
+    
+}
+
 
 /* ELEMENTI HTML */
 

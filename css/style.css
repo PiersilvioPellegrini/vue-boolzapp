@@ -38,12 +38,12 @@
 }
 
 .currentUser{
-    flex-basis: 45px;
+    flex-basis: 60px;
     flex-shrink: 0;
 }
 
 .footerChat{
-    flex-basis: 45px;
+    flex-basis: 50px;
     flex-shrink: 0;
 }
 
@@ -52,9 +52,37 @@
     background-image: url("../img/mine.jpg");
 }
 
+.searchbar{
+    height: 25px;
+    flex-grow: 1;
+    
+}
+
+/* COLORI */
+.grey{
+    color:grey;
+}
+
+
+
 
 /* ELEMENTI HTML */
 
 body{
     background-color:antiquewhite;  
 }
+
+p{
+    margin:0;
+    font-size: 12px;
+}
+
+h6{
+    margin:0;
+}
+
+img{
+    
+    object-fit: cover;
+}
+

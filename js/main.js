@@ -93,11 +93,9 @@ const app = createApp({
            
             };
 	    },
-		methods:{
+		// methods:{
 				
-			},
-		mounted:{
-			},
-				
+		// 	},
+		
         
 }).mount('#app');

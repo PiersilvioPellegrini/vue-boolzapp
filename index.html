@@ -23,7 +23,7 @@
 
 <body>
     <div class="backgroundNav"></div>
-    <div class="mainContainer container d-flex">
+    <div class="mainContainer container d-flex" id="app">
         <div class="users d-flex flex-column">
             <div class="headerUsers d-flex flex-column">
                 <div class="mainUser d-flex justify-content-between flex-row">
@@ -68,14 +68,14 @@
                 </div>
             </div>
 
-            <div class="avatarUsers d-flex flex-column ms-2 mt-3 ">
+            <div v-for="(user,i) in userList" class="avatarUsers d-flex flex-column ms-2 mt-3 "">
                 <div class="User d-flex flex-row align-items-center p-1 gap-2 mb-3 ">
                     <div style="height: 50px; aspect-ratio: 1/1;"
                         class="avatar d-flex align-self-center rounded-circle overflow-hidden ">
                         <img class="img-fluid" src="img/avatar_2.jpg" alt="">
                     </div>
                     <div class="notificheText d-flex flex-column flex-fill align-self-start">
-                        <h6>Michele</h6>
+                        <h6>{{user.name}}</h6>
                         <p class="grey">ultimo messaggio inviato</p>
                     </div>
 
@@ -115,8 +115,25 @@
 
                 </div>
             </div>
-            <div class="currentChat">
-
+            <div class="currentChat d-flex flex-column">
+                <div class="messageGreen" >
+                    <p>Ciao</p>
+                </div>
+                <div class="messageWhite">
+                    <p>Ciao</p>
+                </div>
+                <div class="messageWhite">
+                    <p>Ciao</p>
+                </div>
+                <div class="messageGreen" >
+                    <p>Ciao</p>
+                </div>
+                <div class="messageGreen" >
+                    <p>Ciao</p>
+                </div>
+                <div class="messageWhite">
+                    <p>Ciao</p>
+                </div>
 
             </div>
             <div class="footerChat d-flex flex-row align-items-center p-1">

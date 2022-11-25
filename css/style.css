@@ -1,127 +1,123 @@
 /* CLASSI */
-*{
+* {
     /* border: 1px solid red; */
 }
 
 
-.backgroundNav{
+.backgroundNav {
     position: absolute;
     top: 0;
     width: 100%;
     height: 14vh;
-    background-color: #149688; 
-    z-index: -1;  
+    background-color: #149688;
+    z-index: -1;
 }
 
-.mainContainer{
+.mainContainer {
     margin-top: 5vh;
     height: 90vh;
-    background-color: white; 
+    background-color: white;
     --bs-gutter-x: 0;
 }
-.headerUsers{
-    flex-basis:15%;
+
+.headerUsers {
+    flex-basis: 15%;
 }
 
-.avatarUsers{
-    flex-grow:1;
-    overflow:auto;
+.avatarUsers {
+    flex-grow: 1;
+    overflow: auto;
 }
 
-.users{
-    flex-basis: 35%; 
+.users {
+    flex-basis: 35%;
 }
 
-.chat{
-    flex-grow:1;
-    
+.chat {
+    flex-grow: 1;
+
 }
 
-.currentUser{
+.currentUser {
     flex-basis: 60px;
     flex-shrink: 0;
 }
 
-.footerChat{
+.footerChat {
     flex-basis: 50px;
     flex-shrink: 0;
 }
 
-.currentChat{
+.currentChat {
     flex-grow: 1;
     background-image: url("../img/mine.jpg");
+    overflow: auto;
 }
 
-.searchbar{
+.searchbar {
     height: 25px;
     flex-grow: 1;
-    
+
 }
 
 
-.notifiche{
+.notifiche {
     background-color: #8EDAFC;
 }
 
-.bellIcon{
+.bellIcon {
     background-color: white;
-    color: #8EDAFC;;
+    color: #8EDAFC;
+    ;
 }
 
-.messageGreen{
+.message {
     padding: 20px 20px;
     align-items: center;
-    justify-content: start;
-    display:flex;
-    margin: 20px;
     
-    max-width: max-content;
-    
-    border-radius: 25px;
+    display: flex;
     height: 40px;
-    background-color:rgb(101, 139, 101);
-    color:black;
-    
+    min-width: fit-content;
+    border-radius: 25px;
 }
 
-.messageWhite{
+.messageGreen {
+    margin: 20px;
+    border-radius: 25px;
+    background-color: rgb(101, 139, 101);
+    color: black;
     align-self: flex-end;
-    padding: 20px 20px;
-    align-items: center;
-    justify-content: start;
-    display:flex;
+}
+
+.messageWhite {
+    align-self: flex-start;
     margin: 20px;
-    
-    max-width: max-content;
-    border-radius: 25px;
-    height: 40px;
-    background-color:white;
-    color:black;
+    background-color: white;
+    color: black;
     
 }
 
 /* COLORI */
-.grey{
-    color:grey;
+.grey {
+    color: grey;
 }
 
 /* ELEMENTI HTML */
 
-body{
-    background-color:antiquewhite;  
+body {
+    background-color: antiquewhite;
 }
 
-p{
-    margin:0;
+p {
+    margin: 0;
     font-size: 12px;
 }
 
-h6{
-    margin:0;
+h6 {
+    margin: 0;
 }
 
-img{
-    
+img {
+    height: 100%;
     object-fit: cover;
 }
-

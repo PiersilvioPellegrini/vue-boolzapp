@@ -70,7 +70,7 @@
                         </div>
                     </div>
                     <!-- SEARCH CHAT -->
-                    <div class="search d-flex flex-row align-items-center p-2 gap-3 mt-1 ">
+                    <div class="search d-flex flex-row align-items-center p-2 gap-3 mt-1">
                         <i class="fa-solid fa-magnifying-glass align-items-center"
                             style="font-size:14px; color:grey;"></i>
                         <div class="searchbar d-flex align-items-center">
@@ -84,14 +84,15 @@
                 <!-- USERS LEFT SIDE -->
                 <div class="avatarUsers d-flex flex-column ms-2 mt-3">
                     <!-- SINGLE USER -->
-                    <div class="User d-flex flex-row align-items-center p-1 gap-2 mb-2 ">
+                    <div class="User d-flex flex-row align-items-center p-1 gap-2 mb-2" v-for="(user,i) in usersList"
+                        :key="i + user.name" @click="selectedUser = user">
                         <div style="height: 50px; aspect-ratio: 1/1;"
-                            class="avatar d-flex align-self-center rounded-circle overflow-hidden ">
-                            <img class="img-fluid" src="img/avatar_2.jpg" alt="">
+                            class="avatar d-flex align-self-center rounded-circle overflow-hidden">
+                            <img class="img-fluid" :src="`img/avatar${user.avatar}.jpg`" alt="">
                         </div>
                         <!-- INFO SINGLE USER -->
                         <div class="notificheText d-flex flex-column flex-fill align-self-start">
-                            <h6>Michele</h6>
+                            <h6>{{user.name}}</h6>
                             <p class="grey">ultimo messaggio inviato</p>
                         </div>
                         <!-- TIME SINGLE USER -->
@@ -100,6 +101,7 @@
                         </div>
 
                     </div>
+
 
 
                 </div>
@@ -112,11 +114,11 @@
                     <!-- PHOTO USER -->
                     <div style="height: 40px; aspect-ratio: 1/1;"
                         class="avatar d-flex align-items-center rounded-circle overflow-hidden">
-                        <img class="img-fluid" src="img/avatar_4.jpg" alt="">
+                        <img class="img-fluid" :src="`img/avatar${selectedUser.avatar}.jpg`">
                     </div>
                     <!-- INFO USER -->
                     <div class="d-flex flex-column flex-fill">
-                        <h6>Michele</h6>
+                        <h6>{{selectedUser.name}}</h6>
                         <p class="grey">Ultimo accesso oggi alle 12.00</p>
                     </div>
                     <!-- ICONS RIGHT SIDE -->
@@ -136,37 +138,26 @@
                 </div>
                 <!-- MESSAGE CHAT -->
                 <div class="currentChat d-flex flex-column">
-                    <div class="messageGreen">
-                        <p>Ciao Sono Pier</p>
-                    </div>
-                    <div class="messageWhite">
-                        <p>Ciao</p>
-                    </div>
-                    <div class="messageWhite">
-                        <p>Ciao</p>
-                    </div>
-                    <div class="messageGreen">
-                        <p>Ciao</p>
-                    </div>
-                    <div class="messageGreen">
-                        <p>Ciao</p>
-                    </div>
-                    <div class="messageWhite">
-                        <p>Ciao</p>
+
+                    <div v-for="(message, i) in selectedUser.messages" class="message"
+                        :class="message.status === 'sent' ? 'messageWhite' : 'messageGreen'">
+                        <p>{{message.message}}</p>
                     </div>
 
                 </div>
                 <!-- FOOTER CHAT -->
-                <div class="footerChat d-flex flex-row align-items-center p-1">
+                <div class="footerChat d-flex flex-row align-items-center justify-content-between p-1">
                     <!-- ICON LEFT SIDE -->
                     <div class="icon p-2 me-3">
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
+                    
                     <!-- INPUT TEXT MESSSAGE -->
-                    <div class="searchbar d-flex">
-                        <input class="rounded flex-fill " style="border:0; font-size: 12px;" type="text"
-                            placeholder="scrivi un messaggio">
-                    </div>
+                    <form class="flex-grow-1" @submit.prevent="sentNewMessage()">
+                        <input class="rounded flex-fill" style="border:0; font-size:12px; width: 100%;" type="text"
+                            placeholder="inserisci un nuovo messaggio" v-model="newMessage.message">
+                    </form>
+
                     <!-- ICON RIGHT SIDE -->
                     <div class="icon p-2 ms-3">
                         <i class="fa-solid fa-microphone"></i>

@@ -90,7 +90,6 @@ const app = createApp({
                 ],
               },
               ]
-           
             };
 	    },
 		// methods:{

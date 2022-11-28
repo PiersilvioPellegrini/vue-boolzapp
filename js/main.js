@@ -132,12 +132,17 @@ const app = createApp({
       });
     },
 
-    searchUser(){
-      
-      
-    }
   },
-
+  
+  computed:{
+  fnsearchUser(){
+    // eseguo un filtro sull'array degli utenti
+    return this.usersList.filter((user) =>
+    // nome dell'utente confrontato con quello inserito nella barra di ricerca
+    user.name.toLowerCase().includes(this.searchUser)
+    );
+  },
+},
   // assegno alla variabile SelectedUser il valore di indice = 0 (usersList)
   beforeMount() {
     this.selectedUser = this.usersList[0];

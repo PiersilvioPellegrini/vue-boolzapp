@@ -74,7 +74,7 @@
                     <div class="search d-flex flex-row align-items-center p-2 gap-3 mt-1">
                         <i class="fa-solid fa-magnifying-glass align-items-center"
                             style="font-size:14px; color:grey;"></i>
-                        <form class="searchbar d-flex align-items-center" @submit.prevent="searchUser()">
+                        <form class="searchbar d-flex align-items-center">
                             <input class="rounded"
                                 style="width: 100%; height: 15px; border:0; font-size: 12px; font-weight: 600;"
                                 type="text" placeholder="Cerca chat esistente" v-model="searchUser">
@@ -82,10 +82,14 @@
 
                     </div>
                 </div>
-                <!-- USERS LEFT SIDE -->
+                <!-- USERS LEFT SIDE --> 
                 <div class="avatarUsers d-flex flex-column ms-2 mt-3">
                     <!-- SINGLE USER -->
-                    <div class="User d-flex flex-row align-items-center p-1 gap-2 mb-2" v-for="(user,i) in usersList"
+
+                        <!-- usiamo la funzione che ci filtra tutti gli utenti corrispondenti al nome inserito, il v-for veine fatto sulla funzione che si aggiorna in tempo reale -->
+                    <div class="User d-flex flex-row align-items-center p-1 gap-2 mb-2" 
+                        
+                        v-for="(user,i) in fnsearchUser"
                         :key="i + user.name" @click="selectedUser = user">
                         <div style="height: 50px; aspect-ratio: 1/1;"
                             class="avatar d-flex align-self-center rounded-circle overflow-hidden">

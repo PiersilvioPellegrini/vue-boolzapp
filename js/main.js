@@ -4,9 +4,9 @@ const app = createApp({
   data() {
     return {
       selectedUser: null,
-      searchUser:"",
-  
-      dateTime : luxon.DateTime,
+      searchUser: "",
+
+      dateTime: luxon.DateTime,
       // array di appoggio che prende il valore di input del messaggio
       newMessage: [
         {
@@ -111,7 +111,7 @@ const app = createApp({
     sentNewMessage() {
       // entro dentro l'elemento utente in cui mi trovo
       this.selectedUser.messages.push({
-        date: this.dateTime.now().toFormat('dd/MM/yyyy HH:mm:ss'),
+        date: this.dateTime.now().toFormat(" HH:mm"),
         // assegno il valore che ha preso l'array di appoggio come input
         message: this.newMessage.message,
         status: "received",
@@ -125,24 +125,23 @@ const app = createApp({
     sendReplywithTimer() {
       // creo un nuovo messaggio
       this.selectedUser.messages.push({
-        date: this.dateTime.now().toFormat('dd/MM/yyyy HH:mm:ss'),
+        date: this.dateTime.now().toFormat(" HH:mm"),
         // imposto risposta
         message: "ok",
         status: "sent",
       });
     },
-
   },
-  
-  computed:{
-  fnsearchUser(){
-    // eseguo un filtro sull'array degli utenti
-    return this.usersList.filter((user) =>
-    // nome dell'utente confrontato con quello inserito nella barra di ricerca
-    user.name.toLowerCase().includes(this.searchUser)
-    );
+  // tramite computed riusciamo a gestire i nomi in maniera dinamica
+  computed: {
+    fnsearchUser() {
+      // eseguo un filtro sull'array degli utenti
+      return this.usersList.filter((user) =>
+        // nome dell'utente confrontato con quello inserito nella barra di ricerca
+        user.name.toLowerCase().includes(this.searchUser)
+      );
+    },
   },
-},
   // assegno alla variabile SelectedUser il valore di indice = 0 (usersList)
   beforeMount() {
     this.selectedUser = this.usersList[0];

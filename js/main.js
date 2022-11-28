@@ -4,7 +4,9 @@ const app = createApp({
   data() {
     return {
       selectedUser: null,
-
+      searchUser:"",
+  
+      dateTime : luxon.DateTime,
       // array di appoggio che prende il valore di input del messaggio
       newMessage: [
         {
@@ -109,7 +111,7 @@ const app = createApp({
     sentNewMessage() {
       // entro dentro l'elemento utente in cui mi trovo
       this.selectedUser.messages.push({
-        date: "10/01/2020 15:50:00",
+        date: this.dateTime.now().toFormat('dd/MM/yyyy HH:mm:ss'),
         // assegno il valore che ha preso l'array di appoggio come input
         message: this.newMessage.message,
         status: "received",
@@ -123,12 +125,17 @@ const app = createApp({
     sendReplywithTimer() {
       // creo un nuovo messaggio
       this.selectedUser.messages.push({
-        date: "10/01/2020 15:50:00",
+        date: this.dateTime.now().toFormat('dd/MM/yyyy HH:mm:ss'),
         // imposto risposta
         message: "ok",
         status: "sent",
       });
     },
+
+    searchUser(){
+      
+      
+    }
   },
 
   // assegno alla variabile SelectedUser il valore di indice = 0 (usersList)
